@@ -97,4 +97,3 @@ class HandleCollisionsAction(Action):
                 segment.set_color(constants.WHITE)
             for segment in segments2:
                 segment.set_color(constants.WHITE)
-            food.set_color(constants.WHITE)

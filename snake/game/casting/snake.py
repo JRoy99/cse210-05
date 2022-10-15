@@ -10,7 +10,7 @@ class Snake(Actor):
     The responsibility of Snake is to move itself.
 
     Attributes:
-        _points (int): The number of points the food is worth.
+        
     """
     def __init__(self, x_mod, y_mod, dir, def_color):
         super().__init__()
@@ -25,14 +25,14 @@ class Snake(Actor):
         # move all segments
         for segment in self._segments:
             segment.move_next()
-        self.grow_tail(1)
-
         # update velocities
         for i in range(len(self._segments) - 1, 0, -1):
             trailing = self._segments[i]
             previous = self._segments[i - 1]
             velocity = previous.get_velocity()
             trailing.set_velocity(velocity)
+
+        self.grow_tail(1)
 
     def get_head(self):
         return self._segments[0]
