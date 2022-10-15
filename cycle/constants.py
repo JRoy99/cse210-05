@@ -1,11 +1,11 @@
 from game.shared.color import Color
 
 
-COLUMNS = 60
-ROWS = 30
+COLUMNS = 90
+ROWS = 60
 CELL_SIZE = 15
-MAX_X = 1200
-MAX_Y = 800
+MAX_X = 1350
+MAX_Y = 900
 FRAME_RATE = 10
 FONT_SIZE = 15
 CAPTION = "Light Bikes"

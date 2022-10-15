@@ -21,8 +21,8 @@ def main():
     cast = Cast()
     cast.add_actor("bikes", Bike(.25, .5, constants.GREEN))
     cast.add_actor("bikes", Bike(.75, .5, constants.RED))
-    cast.add_actor("scores", Score("Player 1 Lives Remaining: ", Point(int(constants.MAX_X * .05), 0)))
-    cast.add_actor("scores", Score("Player 2 Lives Remainings: ", Point(int(constants.MAX_X * .6), 0)))
+    cast.add_actor("scores", Score("Player 1 Lives Remaining: ", Point(int(constants.MAX_X * .05), 0), constants.GREEN))
+    cast.add_actor("scores", Score("Player 2 Lives Remainings: ", Point(int(constants.MAX_X * .6), 0), constants.RED))
 
    
     # start the game
