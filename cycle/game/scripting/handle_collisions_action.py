@@ -80,11 +80,17 @@ class HandleCollisionsAction(Action):
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
 
+            if self.winner == "Player 1":
+                color = constants.GREEN
+            else:
+                color = constants.RED
+
             position = Point(x, y-150)
             message_gameover = Actor()
             message_gameover.set_text("Game Over!") 
             message_gameover.set_font_size(5*constants.FONT_SIZE)
             message_gameover.set_position(position)
+            message_gameover.set_color(color)
             cast.add_actor("messages", message_gameover)
           
             position = Point(x, y-50)
@@ -92,6 +98,7 @@ class HandleCollisionsAction(Action):
             message_winner.set_text(f"{self.winner} wins!")
             message_winner.set_font_size(3*constants.FONT_SIZE)
             message_winner.set_position(position)
+            message_winner.set_color(color)
             cast.add_actor("messages", message_winner)
 
             for bike in bikes:
