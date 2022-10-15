@@ -2,7 +2,7 @@ import constants
 
 from game.casting.cast import Cast
 from game.casting.score import Score
-from game.casting.snake import Snake
+from game.casting.bike import Bike
 from game.scripting.script import Script
 from game.scripting.control_actors_action import ControlActorsAction
 from game.scripting.move_actors_action import MoveActorsAction
@@ -19,9 +19,11 @@ def main():
     
     # create the cast
     cast = Cast()
-    cast.add_actor("snakes", Snake(.25, .5, 'u', constants.GREEN))
-    cast.add_actor("snakes", Snake(.75, .5, 'd', constants.RED))
-    cast.add_actor("scores", Score())
+    cast.add_actor("bikes", Bike(.25, .5, constants.GREEN))
+    cast.add_actor("bikes", Bike(.75, .5, constants.RED))
+    cast.add_actor("scores", Score("Player 1 Lives Remaining: ", Point(int(constants.MAX_X * .05), 0)))
+    cast.add_actor("scores", Score("Player 2 Lives Remainings: ", Point(int(constants.MAX_X * .6), 0)))
+
    
     # start the game
     keyboard_service = KeyboardService()

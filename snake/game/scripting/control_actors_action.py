@@ -5,9 +5,9 @@ from game.shared.point import Point
 
 class ControlActorsAction(Action):
     """
-    An input action that controls the snake.
+    An input action that controls the bike.
     
-    The responsibility of ControlActorsAction is to get the direction and move the snake's head.
+    The responsibility of ControlActorsAction is to get the direction and move the bike's bike.
 
     Attributes:
         _keyboard_service (KeyboardService): An instance of KeyboardService.
@@ -31,7 +31,7 @@ class ControlActorsAction(Action):
             script (Script): The script of Actions in the game.
         """
 
-        snakes = cast.get_actors("snakes")
+        bikes = cast.get_actors("bikes")
 
         # Player 1
         # left
@@ -50,7 +50,7 @@ class ControlActorsAction(Action):
         if self._keyboard_service.is_key_down('s'):
             self._direction1 = Point(0, constants.CELL_SIZE)
 
-        snakes[0].turn_head(self._direction1)
+        bikes[0].turn_bike(self._direction1)
 
         # Player 2
         # left
@@ -69,4 +69,4 @@ class ControlActorsAction(Action):
         if self._keyboard_service.is_key_down('k'):
             self._direction2 = Point(0, constants.CELL_SIZE)
         
-        snakes[1].turn_head(self._direction2)
+        bikes[1].turn_bike(self._direction2)
