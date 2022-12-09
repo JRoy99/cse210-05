@@ -58,7 +58,7 @@ class Bike(Actor):
         x = int(constants.MAX_X * x_mod)
         y = int(constants.MAX_Y * y_mod)
 
-        position = Point(x, y * constants.CELL_SIZE)
+        position = Point(x, y )
         velocity = Point(0, 1 * -constants.CELL_SIZE)
         text = "O"
             

@@ -1,6 +1,8 @@
 import constants
+from game.scripting.control_ai_action import ControlAIAction
 from game.scripting.action import Action
 from game.shared.point import Point
+
 
 
 class ControlActorsAction(Action):
@@ -22,6 +24,8 @@ class ControlActorsAction(Action):
         self._keyboard_service = keyboard_service
         self._direction1 = Point(0, constants.CELL_SIZE)
         self._direction2 = Point(0, -constants.CELL_SIZE)
+
+        #self._ai_action = ControlAIAction()
 
     def execute(self, cast, script):
         """Executes the control actors action.
@@ -68,5 +72,7 @@ class ControlActorsAction(Action):
         # down
         if self._keyboard_service.is_key_down('k'):
             self._direction2 = Point(0, constants.CELL_SIZE)
+
+        #self._direction2 = self._ai_action.execute()
         
         bikes[1].turn_bike(self._direction2)

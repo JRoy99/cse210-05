@@ -17,16 +17,7 @@ class Score(Actor):
         super().__init__()
         self._points = 0
         self._text1 = text
-        self.add_points(2)
         self.set_position(position)
         self.set_font_size(constants.FONT_SIZE*2)
         self.set_color(color)
-
-    def add_points(self, points):
-        """Adds the given points to the score's total points.
-        
-        Args:
-            points (int): The points to add.
-        """
-        self._points += points
-        self.set_text(f"{self._text1} {self._points}")
+        self.set_text(f"{self._text1}")
